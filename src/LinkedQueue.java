@@ -62,6 +62,7 @@ public class LinkedQueue<E> {
             QueueNode current = this.front.next;
             while (current != null) {
                 result += ", " + current.data;
+                current = current.next;
             }
             return result + "]";
         }
