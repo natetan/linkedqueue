@@ -67,4 +67,9 @@ public class LinkedQueue<E> {
             return result + "]";
         }
     }
+
+    public void addAll(LinkedQueue other) {
+        this.back.next = other.front;
+        this.back = other.back;
+    }
 }
