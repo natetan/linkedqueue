@@ -8,9 +8,9 @@ import java.util.NoSuchElementException;
  */
 
 public class LinkedQueue<E> {
-    private QueueNode front;
-    private QueueNode back;
-    private int size;
+    private QueueNode front; // reference to the front
+    private QueueNode back; // reference to the back
+    private int size; // reference to the size of the queue
 
     public LinkedQueue() {
         this.front = null;
