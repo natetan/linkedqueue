@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
@@ -71,5 +73,13 @@ public class LinkedQueue<E> {
     public void addAll(LinkedQueue other) {
         this.back.next = other.front;
         this.back = other.back;
+    }
+
+    public List<E> toArray(List<E> list) {
+        List<E> newList = new ArrayList<>();
+        for (QueueNode current = this.front; current != null; current = current.next) {
+            newList.add((E) current.data);
+        }
+        return newList;
     }
 }
