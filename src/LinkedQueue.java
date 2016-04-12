@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 /**
  * Yulong Tan
  * 4.8.16
- * <p>
+ *
  * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
@@ -35,9 +35,26 @@ public class LinkedQueue<E> {
         if (this.isEmpty()) {
             throw new NoSuchElementException();
         }
-        E data = (E) this.front.data;
-        this.front = this.front.next;
+        return this.remove(0);
+    }
+
+    public E remove(int index) {
+        if (index >= this.size) {
+            throw new IndexOutOfBoundsException("Index: " + index);
+        }
+        E data;
         this.size--;
+        if (index == 0) {
+            data = (E) this.front.data;
+            this.front = this.front.next;
+        } else {
+            QueueNode current = this.front;
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+            data = (E) current.next.data;
+            current.next = current.next.next;
+        }
         return data;
     }
 
@@ -112,12 +129,14 @@ public class LinkedQueue<E> {
             while (current.next != null) {
                 if (current.next.data.equals(e)) {
                     current.next = current.next.next;
+                    this.size--;
                 } else {
                     current = current.next;
                 }
             }
             if (this.front.data.equals(e)) {
                 this.front = this.front.next;
+                this.size--;
             }
         }
     }
@@ -144,5 +163,9 @@ public class LinkedQueue<E> {
                 return index;
             }
         }
+    }
+
+    public void shuffle() {
+
     }
 }
