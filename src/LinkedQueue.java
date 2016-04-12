@@ -75,7 +75,7 @@ public class LinkedQueue<E> {
         this.back = other.back;
     }
 
-    public List<E> toArray(List<E> list) {
+    public List<E> toArray() {
         List<E> newList = new ArrayList<>();
         for (QueueNode current = this.front; current != null; current = current.next) {
             newList.add((E) current.data);

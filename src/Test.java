@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Yulong on 4/8/2016.
  */
@@ -24,5 +27,8 @@ public class Test {
         q.add(q.remove());
         System.out.println("Added the removal: " + q.toString());
         System.out.println("Size: " + q.size()); // 4
+
+        List<String> list = q.toArray();
+        System.out.println("List: " + list);
     }
 }
