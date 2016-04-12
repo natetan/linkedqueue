@@ -30,5 +30,12 @@ public class Test {
 
         List<String> list = q.toArray();
         System.out.println("List: " + list);
+
+        for (int i = 0; i < 5; i++) {
+            q.add("hello");
+        }
+        System.out.println("Added hello 5 times: " + q.toString());
+        q.removeAll("hello");
+        System.out.println("Called removeAll(hello): " + q.toString());
     }
 }
