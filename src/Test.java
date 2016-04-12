@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Created by Yulong on 4/8/2016.
@@ -37,5 +38,27 @@ public class Test {
         System.out.println("Added hello 5 times: " + q.toString());
         q.removeAll("hello");
         System.out.println("Called removeAll(hello): " + q.toString());
+        System.out.println("Index of Carrots: " + q.indexOf("Carrots")); // 0
+        System.out.println("Index of Bananas: " + q.indexOf("Bananas")); // 3
+        q.remove(2);
+        System.out.println("Removed index 2: " + q.toString());
+        System.out.println("Size: " + q.size()); // 3
+    }
+
+    public static int removeMin(LinkedQueue q) {
+        int size = q.size();
+        int min = Integer.MIN_VALUE;
+        for (int i = 0; i < size; i++) {
+            int next = (Integer) q.remove();
+            min = Math.min(min, next);
+            q.add(next);
+        }
+        for (int i = 0; i < size; i++) {
+            int next = (Integer) q.remove();
+            if (next != min) {
+                q.add(next);
+            }
+        }
+        return min;
     }
 }
