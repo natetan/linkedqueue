@@ -87,18 +87,19 @@ public class LinkedQueue<E> {
         this.size = 0;
         this.front = null;
     }
-
+    
     public boolean contains(E e) {
         if (this.front == null) {
             return false;
-        } else if (this.front == e) {
+        } else if (this.front.data.equals(e)) {
             return true;
         } else {
             QueueNode current = this.front.next;
             while (current != null) {
-                if (current == e) {
+                if (current.data.equals(e)) {
                     return true;
                 }
+                current = current.next;
             }
             return false;
         }
@@ -109,13 +110,13 @@ public class LinkedQueue<E> {
         if (this.contains(e)) {
             QueueNode current = this.front;
             while (current.next != null) {
-                if (current.next == e) {
+                if (current.next.data.equals(e)) {
                     current.next = current.next.next;
                 } else {
                     current = current.next;
                 }
             }
-            if (this.front == e) {
+            if (this.front.data.equals(e)) {
                 this.front = this.front.next;
             }
         }
