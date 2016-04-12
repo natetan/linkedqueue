@@ -25,9 +25,15 @@ public class LinkedQueue<E> {
         if (this.isEmpty()) {
             this.front = new QueueNode(data);
             this.back = this.front;
+            this.front.prev = null;
         } else {
-            this.back.next = new QueueNode(data);
+            // MUST FIX THIS BACK ISSUE
+            // 1 - 2
+            QueueNode next = new QueueNode(data);
+            this.back.next = next;
+            QueueNode prev = this.back;
             this.back = this.back.next;
+            next.prev = prev;
         }
         this.size++;
     }
@@ -125,6 +131,7 @@ public class LinkedQueue<E> {
         if (index == 0) {
             data = (E) this.front.data;
             this.front = this.front.next;
+            this.front.prev = null;
         } else {
             QueueNode current = this.front;
             for (int i = 0; i < index - 1; i++) {
@@ -139,6 +146,11 @@ public class LinkedQueue<E> {
     // Removes all occurrences of e
     public void removeAll(E e) {
         if (this.contains(e)) {
+            while (this.back.data.equals(e)) {
+                this.back = this.back.prev;
+                this.back.next = null;
+                this.size--;
+            }
             QueueNode current = this.front;
             while (current.next != null) {
                 if (current.next.data.equals(e)) {
@@ -154,11 +166,13 @@ public class LinkedQueue<E> {
             }
         }
         // Without access to the previous node, this way is used
+        /*
         QueueNode current = this.front;
         while (current.next != null) {
             current = current.next;
         }
         this.back = current;
+        */
     }
 
     // Should rearrange all the links randomly
