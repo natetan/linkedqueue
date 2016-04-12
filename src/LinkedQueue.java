@@ -3,10 +3,10 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
- *  Yulong Tan
- *  4.8.16
- *
- *  LinkedList implementation of a Queue, with First In, First Out structure.
+ * Yulong Tan
+ * 4.8.16
+ * <p>
+ * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
 public class LinkedQueue<E> {
@@ -81,5 +81,43 @@ public class LinkedQueue<E> {
             newList.add((E) current.data);
         }
         return newList;
+    }
+
+    public void clear() {
+        this.size = 0;
+        this.front = null;
+    }
+
+    public boolean contains(E e) {
+        if (this.front == null) {
+            return false;
+        } else if (this.front == e) {
+            return true;
+        } else {
+            QueueNode current = this.front.next;
+            while (current != null) {
+                if (current == e) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    // Removes all occurrences of e
+    public void removeAll(E e) {
+        if (this.contains(e)) {
+            QueueNode current = this.front;
+            while (current.next != null) {
+                if (current.next == e) {
+                    current.next = current.next.next;
+                } else {
+                    current = current.next;
+                }
+            }
+            if (this.front == e) {
+                this.front = this.front.next;
+            }
+        }
     }
 }
