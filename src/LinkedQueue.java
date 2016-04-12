@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Random;
 
 /**
  * Yulong Tan
  * 4.8.16
- *
+ * <p>
  * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
@@ -29,6 +30,83 @@ public class LinkedQueue<E> {
             this.back = this.back.next;
         }
         this.size++;
+    }
+
+    public void addAll(LinkedQueue other) {
+        this.back.next = other.front;
+        this.back = other.back;
+    }
+
+    public void clear() {
+        this.size = 0;
+        this.front = null;
+    }
+
+    public boolean contains(E e) {
+        if (this.front == null) {
+            return false;
+        } else if (this.front.data.equals(e)) {
+            return true;
+        } else {
+            QueueNode current = this.front.next;
+            while (current != null) {
+                if (current.data.equals(e)) {
+                    return true;
+                }
+                current = current.next;
+            }
+            return false;
+        }
+    }
+
+    // Returns index of first occurence of e.
+    // Returns -1 if not found
+    public int indexOf(E e) {
+        if (!this.contains(e)) {
+            return -1;
+        } else {
+            int index = 0;
+            if (this.front.data.equals(e)) {
+                return 0;
+            } else {
+                QueueNode current = this.front.next;
+                while (current != null) {
+                    index++;
+                    if (current.data.equals(e)) {
+                        current = null;
+                    } else {
+                        current = current.next;
+                    }
+                }
+                return index;
+            }
+        }
+    }
+
+    public boolean isEmpty() {
+        return this.size() == 0;
+    }
+
+    public QueueNode nodeAt(int index) {
+        if (index >= this.size) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (index == 0) {
+            return this.front;
+        } else {
+            QueueNode current = this.front;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+            return current;
+        }
+    }
+
+    public E peek() {
+        if (this.isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return (E) this.front.data;
     }
 
     public E remove() {
@@ -58,70 +136,6 @@ public class LinkedQueue<E> {
         return data;
     }
 
-    public E peek() {
-        if (this.isEmpty()) {
-            throw new NoSuchElementException();
-        }
-        return (E) this.front.data;
-    }
-
-    public int size() {
-        return this.size;
-    }
-
-    public boolean isEmpty() {
-        return this.size() == 0;
-    }
-
-    public String toString() {
-        if (this.isEmpty()) {
-            return "[]";
-        } else {
-            String result = "[" + this.front.data;
-            QueueNode current = this.front.next;
-            while (current != null) {
-                result += ", " + current.data;
-                current = current.next;
-            }
-            return result + "]";
-        }
-    }
-
-    public void addAll(LinkedQueue other) {
-        this.back.next = other.front;
-        this.back = other.back;
-    }
-
-    public List<E> toArray() {
-        List<E> newList = new ArrayList<>();
-        for (QueueNode current = this.front; current != null; current = current.next) {
-            newList.add((E) current.data);
-        }
-        return newList;
-    }
-
-    public void clear() {
-        this.size = 0;
-        this.front = null;
-    }
-
-    public boolean contains(E e) {
-        if (this.front == null) {
-            return false;
-        } else if (this.front.data.equals(e)) {
-            return true;
-        } else {
-            QueueNode current = this.front.next;
-            while (current != null) {
-                if (current.data.equals(e)) {
-                    return true;
-                }
-                current = current.next;
-            }
-            return false;
-        }
-    }
-
     // Removes all occurrences of e
     public void removeAll(E e) {
         if (this.contains(e)) {
@@ -141,31 +155,47 @@ public class LinkedQueue<E> {
         }
     }
 
-    // Returns index of first occurence of e.
-    // Returns -1 if not found
-    public int indexOf(E e) {
-        if (!this.contains(e)) {
-            return -1;
-        } else {
-            int index = 0;
-            if (this.front.data.equals(e)) {
-                return 0;
-            } else {
-                QueueNode current = this.front.next;
-                while (current != null) {
-                    index++;
-                    if (current.data.equals(e)) {
-                        current = null;
-                    } else {
-                        current = current.next;
-                    }
-                }
-                return index;
-            }
+    // Should rearrange all the links randomly
+    public void shuffle() {
+        LinkedQueue<E> storage = new LinkedQueue<>();
+        Random r = new Random();
+        storage.addAll(this);
+        this.clear();
+        int rand = r.nextInt(storage.size());
+        this.front = storage.nodeAt(rand);
+        storage.remove(rand);
+        QueueNode current = this.front;
+        while (!storage.isEmpty()) {
+            int random = r.nextInt(storage.size());
+            current.next = storage.nodeAt(random);
+            storage.remove(random);
+            current = current.next;
         }
     }
 
-    public void shuffle() {
+    public int size() {
+        return this.size;
+    }
 
+    public List<E> toArray() {
+        List<E> newList = new ArrayList<>();
+        for (QueueNode current = this.front; current != null; current = current.next) {
+            newList.add((E) current.data);
+        }
+        return newList;
+    }
+
+    public String toString() {
+        if (this.isEmpty()) {
+            return "[]";
+        } else {
+            String result = "[" + this.front.data;
+            QueueNode current = this.front.next;
+            while (current != null) {
+                result += ", " + current.data;
+                current = current.next;
+            }
+            return result + "]";
+        }
     }
 }
