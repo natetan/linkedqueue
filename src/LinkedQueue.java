@@ -87,7 +87,7 @@ public class LinkedQueue<E> {
         this.size = 0;
         this.front = null;
     }
-    
+
     public boolean contains(E e) {
         if (this.front == null) {
             return false;
@@ -118,6 +118,30 @@ public class LinkedQueue<E> {
             }
             if (this.front.data.equals(e)) {
                 this.front = this.front.next;
+            }
+        }
+    }
+
+    // Returns index of first occurence of e.
+    // Returns -1 if not found
+    public int indexOf(E e) {
+        if (!this.contains(e)) {
+            return -1;
+        } else {
+            int index = 0;
+            if (this.front.data.equals(e)) {
+                return 0;
+            } else {
+                QueueNode current = this.front.next;
+                while (current != null) {
+                    index++;
+                    if (current.data.equals(e)) {
+                        current = null;
+                    } else {
+                        current = current.next;
+                    }
+                }
+                return index;
             }
         }
     }
