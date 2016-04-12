@@ -43,6 +43,11 @@ public class Test {
         q.remove(2);
         System.out.println("Removed index 2: " + q.toString());
         System.out.println("Size: " + q.size()); // 3
+        q.add("Swag");
+        q.add("Evil");
+        q.add("Spider-Man");
+        System.out.println("Added stuff: " + q.toString());
+        System.out.println("Size: " + q.size());
     }
 
     public static int removeMin(LinkedQueue q) {

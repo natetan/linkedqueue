@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * Yulong Tan
  * 4.8.16
- * <p>
+ *
  * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
@@ -153,6 +153,12 @@ public class LinkedQueue<E> {
                 this.size--;
             }
         }
+        // Without access to the previous node, this way is used
+        QueueNode current = this.front;
+        while (current.next != null) {
+            current = current.next;
+        }
+        this.back = current;
     }
 
     // Should rearrange all the links randomly
