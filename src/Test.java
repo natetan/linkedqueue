@@ -48,6 +48,13 @@ public class Test {
         q.add("Spider-Man");
         System.out.println("Added stuff: " + q.toString());
         System.out.println("Size: " + q.size());
+
+        q.shuffle();
+        System.out.println("Shuffled queue: " + q.toString());
+        System.out.println("Size: " + q.size());
+        q.remove(0);
+        q.remove(0);
+        System.out.println("Removed first 2: " + q.toString());
     }
 
     public static int removeMin(LinkedQueue q) {
