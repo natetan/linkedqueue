@@ -4,10 +4,12 @@ import java.util.NoSuchElementException;
 import java.util.Random;
 
 /**
- * Yulong Tan
- * 4.8.16
+ *  Yulong Tan
+ *  4.8.16
  *
- * LinkedList implementation of a Queue, with First In, First Out structure.
+ *  LinkedList implementation of a Queue, with First In, First Out structure.
+ *
+ *
  */
 
 public class LinkedQueue<E> {
@@ -15,12 +17,14 @@ public class LinkedQueue<E> {
     private QueueNode back; // reference to the back
     private int size; // reference to the size of the queue
 
+    // Constructs an empty LinkedQueue
     public LinkedQueue() {
         this.front = null;
         this.back = this.front;
         this.size = 0;
     }
 
+    // Adds the given data to the queue, increases the size
     public void add(E data) {
         if (this.isEmpty()) {
             this.front = new QueueNode(data);
@@ -36,6 +40,7 @@ public class LinkedQueue<E> {
         this.size++;
     }
 
+    // Adds all the contents from another LinkedQueue to this one
     public void addAll(LinkedQueue other) {
         int size = other.size();
         for (int i = 0; i < size; i++) {
@@ -45,11 +50,15 @@ public class LinkedQueue<E> {
         }
     }
 
+    // Removes all elements from the LinkedQueue
+    // Size becomes 0
     public void clear() {
         this.size = 0;
         this.front = null;
     }
 
+    // Returns true if LinkedQueue contains given data and
+    // false otherwise
     public boolean contains(E e) {
         if (this.front == null) {
             return false;
@@ -91,10 +100,13 @@ public class LinkedQueue<E> {
         }
     }
 
+    // Returns true if the size is = 0, and false otherwise
     public boolean isEmpty() {
         return this.size() == 0;
     }
 
+    // Returns the node at the given index. If the index is >= than the size,
+    // it throws an IndexOutOfBoundsException
     public QueueNode nodeAt(int index) {
         if (index >= this.size) {
             throw new IndexOutOfBoundsException();
@@ -110,6 +122,8 @@ public class LinkedQueue<E> {
         }
     }
 
+    // Returns the data at the front of the queue. If the queue is empty,
+    // throws a NoSuchElementException
     public E peek() {
         if (this.isEmpty()) {
             throw new NoSuchElementException();
@@ -117,6 +131,9 @@ public class LinkedQueue<E> {
         return (E) this.front.data;
     }
 
+    // Removes the first element and returns its data.
+    // If the LinkedQueue is empty, throws a NoSuchElementException.
+    // Decreases the size
     public E remove() {
         if (this.isEmpty()) {
             throw new NoSuchElementException();
@@ -124,6 +141,9 @@ public class LinkedQueue<E> {
         return this.remove(0);
     }
 
+    // Removes element and returns the data at a given index.
+    // If index >= size, throws an IndexOutOfBoundsException.
+    // Decreases the size.
     public E remove(int index) {
         if (index >= this.size) {
             throw new IndexOutOfBoundsException("Index: " + index + " Size: " + this.size);
@@ -147,7 +167,8 @@ public class LinkedQueue<E> {
         return data;
     }
 
-    // Removes all occurrences of e
+    // Removes all occurrences of e.
+    // Decreases the size.
     public void removeAll(E e) {
         if (this.contains(e)) {
             while (this.back.data.equals(e)) {
@@ -171,7 +192,7 @@ public class LinkedQueue<E> {
         }
     }
 
-    // Should rearrange all the links randomly
+    // Randomly rearranges all the links in the LinkedQueue
     // Only shuffles the queue if the size > 1
     public void shuffle() {
         if (this.size() > 1) {
@@ -189,15 +210,18 @@ public class LinkedQueue<E> {
                 storage.remove(random);
             }
             // Adds in the last one. Large if check guarantees
-            // that there will always be one at the end. 
+            // that there will always be one at the end.
             this.add((E) storage.remove());
         }
     }
 
+    // Returns the size of the queue
     public int size() {
         return this.size;
     }
 
+    // Copies all the data of the LinkedQueue, adds them to a new list, and
+    // returns it. Order and LinkedQueue is unchanged.
     public List<E> toArray() {
         List<E> newList = new ArrayList<>();
         for (QueueNode current = this.front; current != null; current = current.next) {
@@ -206,6 +230,9 @@ public class LinkedQueue<E> {
         return newList;
     }
 
+    // Returns a string representation of the contents of the
+    // LinkedQueue. Data is printed in square brackets, with
+    // each element separated by a comma.
     public String toString() {
         if (this.isEmpty()) {
             return "[]";
