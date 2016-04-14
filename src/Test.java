@@ -52,6 +52,15 @@ public class Test {
         q.shuffle();
         System.out.println("Shuffled queue: " + q.toString());
         System.out.println("Size: " + q.size());
+        LinkedQueue<String> pal = new LinkedQueue<>();
+        pal.add("hello");
+        pal.add("this");
+        pal.add("is");
+        pal.add("is");
+        pal.add("this");
+        pal.add("hello");
+        System.out.println("Pal queue: " + pal.toString());
+        System.out.println("isPalindrome: " + isPalindrome(pal));
     }
 
     public static int removeMin(LinkedQueue q) {
@@ -69,5 +78,25 @@ public class Test {
             }
         }
         return min;
+    }
+
+    public static boolean isPalindrome(LinkedQueue q) {
+        Stack s = new Stack();
+        boolean ok = true;
+        int size = q.size();
+        for (int i = 0; i < size; i++) {
+            Object data = q.remove();
+            s.push(data);
+            q.add(data);
+        }
+        while (!s.isEmpty()) {
+            Object o1 = s.pop();
+            Object o2 = q.remove();
+            q.add(o2);
+            if (!o1.equals(o2)) {
+                ok = false;
+            }
+        }
+        return ok;
     }
 }
