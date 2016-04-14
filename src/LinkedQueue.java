@@ -17,7 +17,7 @@ public class LinkedQueue<E> {
 
     public LinkedQueue() {
         this.front = null;
-        this.back = null;
+        this.back = this.front;
         this.size = 0;
     }
 
@@ -27,8 +27,6 @@ public class LinkedQueue<E> {
             this.back = this.front;
             this.front.prev = null;
         } else {
-            // MUST FIX THIS BACK ISSUE
-            // 1 - 2
             QueueNode next = new QueueNode(data);
             this.back.next = next;
             QueueNode prev = this.back;
@@ -39,8 +37,12 @@ public class LinkedQueue<E> {
     }
 
     public void addAll(LinkedQueue other) {
-        this.back.next = other.front;
-        this.back = other.back;
+        int size = other.size();
+        for (int i = 0; i < size; i++) {
+            E next = (E) other.remove();
+            this.add(next);
+            other.add(next);
+        }
     }
 
     public void clear() {
@@ -124,14 +126,16 @@ public class LinkedQueue<E> {
 
     public E remove(int index) {
         if (index >= this.size) {
-            throw new IndexOutOfBoundsException("Index: " + index);
+            throw new IndexOutOfBoundsException("Index: " + index + " Size: " + this.size);
         }
         E data;
         this.size--;
         if (index == 0) {
             data = (E) this.front.data;
             this.front = this.front.next;
-            this.front.prev = null;
+            if (this.front != null) {
+                this.front.prev = null;
+            }
         } else {
             QueueNode current = this.front;
             for (int i = 0; i < index - 1; i++) {
@@ -165,32 +169,24 @@ public class LinkedQueue<E> {
                 this.size--;
             }
         }
-        // Without access to the previous node, this way is used
-        /*
-        QueueNode current = this.front;
-        while (current.next != null) {
-            current = current.next;
-        }
-        this.back = current;
-        */
     }
 
     // Should rearrange all the links randomly
     public void shuffle() {
         LinkedQueue<E> storage = new LinkedQueue<>();
-        Random r = new Random();
         storage.addAll(this);
+        Random r = new Random();
         this.clear();
-        int rand = r.nextInt(storage.size());
-        this.front = storage.nodeAt(rand);
+        int rand = r.nextInt(storage.size() - 1);
+        this.add((E) storage.nodeAt(rand).data);
         storage.remove(rand);
-        QueueNode current = this.front;
-        while (!storage.isEmpty()) {
-            int random = r.nextInt(storage.size());
-            current.next = storage.nodeAt(random);
+        while (storage.size() > 1) {
+            int random = r.nextInt(storage.size() - 1);
+            this.add((E) storage.nodeAt(random).data);
             storage.remove(random);
-            current = current.next;
         }
+        // Adds in the last one
+        this.add((E) storage.remove());
     }
 
     public int size() {
