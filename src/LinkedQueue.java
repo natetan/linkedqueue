@@ -172,21 +172,26 @@ public class LinkedQueue<E> {
     }
 
     // Should rearrange all the links randomly
+    // Only shuffles the queue if the size > 1
     public void shuffle() {
-        LinkedQueue<E> storage = new LinkedQueue<>();
-        storage.addAll(this);
-        Random r = new Random();
-        this.clear();
-        int rand = r.nextInt(storage.size() - 1);
-        this.add((E) storage.nodeAt(rand).data);
-        storage.remove(rand);
-        while (storage.size() > 1) {
-            int random = r.nextInt(storage.size() - 1);
-            this.add((E) storage.nodeAt(random).data);
-            storage.remove(random);
+        if (this.size() > 1) {
+            LinkedQueue<E> storage = new LinkedQueue<>();
+            storage.addAll(this);
+            Random r = new Random();
+            this.clear();
+            int rand = r.nextInt(storage.size() - 1);
+            this.add((E) storage.nodeAt(rand).data);
+            storage.remove(rand);
+            // Going until the size is 1 fixes the issue of r.nextInt(0)
+            while (storage.size() > 1) {
+                int random = r.nextInt(storage.size() - 1);
+                this.add((E) storage.nodeAt(random).data);
+                storage.remove(random);
+            }
+            // Adds in the last one. Large if check guarantees
+            // that there will always be one at the end. 
+            this.add((E) storage.remove());
         }
-        // Adds in the last one
-        this.add((E) storage.remove());
     }
 
     public int size() {
