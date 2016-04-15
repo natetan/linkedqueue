@@ -207,12 +207,28 @@ public class LinkedQueue<E> {
             }
             half1.sort();
             half2.sort();
-            this.merge();
+            this.mergeSort(this, half1, half2);
         }
     }
 
-    private void merge() {
-
+    // Performs the merge sort algorithm to sort the queue, given
+    // the actual queue, and its two halves.
+    private void mergeSort(LinkedQueue result, LinkedQueue half1, LinkedQueue half2) {
+        while (!half1.isEmpty() && !half2.isEmpty()) {
+            // FIX: Must find a way to compare Objects
+            // They don't seem to have a Comparable
+            if (!(half1.peek() <= half2.peek())) {
+                result.add(half2.remove());
+            } else {
+                result.add(half1.remove());
+            }
+        }
+        while (!half1.isEmpty()) {
+            result.add(half1.remove());
+        }
+        while (!half2.isEmpty()) {
+            result.add(half2.remove());
+        }
     }
 
     // Randomly rearranges all the links in the LinkedQueue
