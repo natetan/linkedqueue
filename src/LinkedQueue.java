@@ -192,6 +192,29 @@ public class LinkedQueue<E> {
         }
     }
 
+    // Sorts the queue
+    public void sort() {
+        if (this.size() > 1) {
+            int size1 = this.size() / 2;
+            int size2 = this.size() - size1;
+            LinkedQueue half1 = new LinkedQueue();
+            LinkedQueue half2 = new LinkedQueue();
+            for (int i = 0; i < size1; i++) {
+                half1.add(this.remove());
+            }
+            for (int i = 0; i < size2; i++) {
+                half2.add(this.remove());
+            }
+            half1.sort();
+            half2.sort();
+            this.merge();
+        }
+    }
+
+    private void merge() {
+
+    }
+
     // Randomly rearranges all the links in the LinkedQueue
     // Only shuffles the queue if the size > 1
     public void shuffle() {
