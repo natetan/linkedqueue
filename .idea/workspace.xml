@@ -27,14 +27,14 @@
       <file leaf-file-name="LinkedQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73551637">
-              <caret line="219" column="50" selection-start-line="219" selection-start-column="50" selection-end-line="219" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.052896727">
+              <caret line="237" column="43" selection-start-line="237" selection-start-column="43" selection-end-line="237" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2863#2864#0" expanded="true" />
                 <element signature="e#2902#2903#0" expanded="true" />
-                <element signature="e#7919#7920#0" expanded="true" />
-                <element signature="e#7951#7952#0" expanded="true" />
+                <element signature="e#7918#7919#0" expanded="true" />
+                <element signature="e#7950#7951#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/src/Test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
+              <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -497,16 +497,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/QueueNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -518,16 +508,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="27" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73551637">
-          <caret line="219" column="50" selection-start-line="219" selection-start-column="50" selection-end-line="219" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.052896727">
+          <caret line="237" column="43" selection-start-line="237" selection-start-column="43" selection-end-line="237" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2863#2864#0" expanded="true" />
             <element signature="e#2902#2903#0" expanded="true" />
-            <element signature="e#7919#7920#0" expanded="true" />
-            <element signature="e#7951#7952#0" expanded="true" />
+            <element signature="e#7918#7919#0" expanded="true" />
+            <element signature="e#7950#7951#0" expanded="true" />
           </folding>
         </state>
       </provider>

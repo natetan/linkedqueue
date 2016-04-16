@@ -217,10 +217,10 @@ public class LinkedQueue<E> {
         while (!half1.isEmpty() && !half2.isEmpty()) {
             // FIX: Must find a way to compare Objects
             // They don't seem to have a Comparable
-            if (!(half1.peek() <= half2.peek())) {
-                result.add(half2.remove());
-            } else {
+            if ((half1.peek() <= half2.peek())) {
                 result.add(half1.remove());
+            } else {
+                result.add(half2.remove());
             }
         }
         while (!half1.isEmpty()) {
