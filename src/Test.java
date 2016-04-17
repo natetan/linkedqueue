@@ -49,8 +49,14 @@ public class Test {
         System.out.println("Added stuff: " + q.toString());
         System.out.println("Size: " + q.size());
 
+        // shuffle
         q.shuffle();
         System.out.println("Shuffled queue: " + q.toString());
+
+        // sort
+        q.sort();
+        System.out.println("Sorted Queue: " + q.toString());
+
         System.out.println("Size: " + q.size());
         LinkedQueue<String> pal = new LinkedQueue<>();
         pal.add("hello");
