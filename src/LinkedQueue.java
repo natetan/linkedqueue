@@ -216,8 +216,9 @@ public class LinkedQueue<E> {
     private void mergeSort(LinkedQueue result, LinkedQueue half1, LinkedQueue half2) {
         while (!half1.isEmpty() && !half2.isEmpty()) {
             // FIX: Must find a way to compare Objects
-            // They don't seem to have a Comparable
-            if ((half1.peek() <= half2.peek())) {
+            // They don't seem to have a Comparable.
+            // Casting to comparable may work
+            if ((((Comparable)half1.peek()).compareTo(((Comparable)half2.peek()))) <= 1) {
                 result.add(half1.remove());
             } else {
                 result.add(half2.remove());
