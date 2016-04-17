@@ -218,7 +218,7 @@ public class LinkedQueue<E> {
             // FIX: Must find a way to compare Objects
             // They don't seem to have a Comparable.
             // Casting to comparable may work
-            if ((((Comparable)half1.peek()).compareTo(((Comparable)half2.peek()))) <= 1) {
+            if ((((Comparable)half1.peek()).compareTo((half2.peek()))) <= 0) {
                 result.add(half1.remove());
             } else {
                 result.add(half2.remove());
