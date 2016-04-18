@@ -105,6 +105,21 @@ public class LinkedQueue<E> {
         return this.size() == 0;
     }
 
+    public boolean isSorted() {
+        if (this.isEmpty() || this.size() == 1) {
+            return true;
+        } else {
+            QueueNode current = this.front;
+            while (current.next != null) {
+                if (((Comparable) current.data).compareTo(current.next.data) > 0) {
+                    return false;
+                }
+                current = current.next;
+            }
+            return true;
+        }
+    }
+
     // Returns the node at the given index. If the index is >= than the size,
     // it throws an IndexOutOfBoundsException
     public QueueNode nodeAt(int index) {
