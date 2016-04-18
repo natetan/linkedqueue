@@ -69,6 +69,9 @@ public class Test {
         pal.add("hello");
         System.out.println("Pal queue: " + pal.toString());
         System.out.println("isPalindrome: " + isPalindrome(pal));
+
+        q.reverse();
+        System.out.println("Reversed queue: " + q.toString());
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
