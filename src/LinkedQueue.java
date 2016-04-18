@@ -237,6 +237,19 @@ public class LinkedQueue<E> {
         }
     }
 
+    // Shifts the elements of the queue n times.
+    // Elements move left (f[]b) Last element is moved to the front
+    public void rotate(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Number must be positive");
+        }
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {
+                this.add(this.remove());
+            }
+        }
+    }
+
     // Sorts the queue
     public void sort() {
         if (this.size() > 1) {
