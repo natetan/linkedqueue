@@ -58,8 +58,9 @@ public class Test {
         q.sort();
         System.out.println("Merge Sort: " + q.toString());
         System.out.println("Sorted: " + q.isSorted());
-
         System.out.println("Size: " + q.size());
+
+        // Palindrome
         LinkedQueue<String> pal = new LinkedQueue<>();
         pal.add("hello");
         pal.add("this");
@@ -70,8 +71,12 @@ public class Test {
         System.out.println("Pal queue: " + pal.toString());
         System.out.println("isPalindrome: " + isPalindrome(pal));
 
+        // Reverse
         q.reverse();
         System.out.println("Reversed queue: " + q.toString());
+
+        System.out.println("q = pal: " + q.equals(pal)); // false
+        System.out.println("q = q: " + q.equals(q)); // true
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
