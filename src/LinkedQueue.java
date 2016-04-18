@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Random;
+import java.util.*;
 
 /**
  *  Yulong Tan
@@ -105,6 +102,7 @@ public class LinkedQueue<E> {
         return this.size() == 0;
     }
 
+    // Returns true if queue is sorted and false otherwise
     public boolean isSorted() {
         if (this.isEmpty() || this.size() == 1) {
             return true;
@@ -204,6 +202,17 @@ public class LinkedQueue<E> {
                 this.front = this.front.next;
                 this.size--;
             }
+        }
+    }
+
+    // Reverses the queue
+    public void reverse() {
+        Stack s = new Stack();
+        while (!this.isEmpty()) {
+            s.push(this.remove());
+        }
+        while (!s.isEmpty()) {
+            this.add((E) s.pop());
         }
     }
 
