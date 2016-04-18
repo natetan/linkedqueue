@@ -73,6 +73,27 @@ public class LinkedQueue<E> {
         }
     }
 
+    // Returns true if this queue is equal to the other queue
+    // and false otherwise.
+    public boolean equals(LinkedQueue other) {
+        if (this.size() != other.size()) {
+            return false;
+        } else if (this.isEmpty() && other.isEmpty()) {
+            return true;
+        } else {
+            QueueNode current1 = this.front;
+            QueueNode current2 = other.front;
+            while (current1 != null) {
+                if (!current1.data.equals(current2.data)) {
+                    return false;
+                }
+                current1 = current1.next;
+                current2 = current2.next;
+            }
+            return true;
+        }
+    }
+
     // Returns index of first occurence of e.
     // Returns -1 if not found
     public int indexOf(E e) {
