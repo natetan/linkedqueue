@@ -79,8 +79,11 @@ public class Test {
         System.out.println("q = pal: " + q.equals(pal)); // false
         System.out.println("q = q: " + q.equals(q)); // true
 
+        // Testing for uniqueness and removing duplicates
+        System.out.println("Is it unique?: " + pal.isUnique());
         Set dupes = pal.removeDuplicates();
         System.out.println("Removed dupes: " + pal.toString());
+        System.out.println("Is it unique?: " + pal.isUnique());
         System.out.println("Dupes: " + dupes.toString());
     }
 
