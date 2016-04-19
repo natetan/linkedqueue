@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Created by Yulong on 4/8/2016.
@@ -85,6 +82,11 @@ public class Test {
         System.out.println("Removed dupes: " + pal.toString());
         System.out.println("Is it unique?: " + pal.isUnique());
         System.out.println("Dupes: " + dupes.toString());
+
+        // Get counts
+        q.add("Spider-Man");
+        Map map = q.getCounts();
+        System.out.println("Counts: " + map.toString());
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
