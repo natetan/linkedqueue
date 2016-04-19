@@ -1,9 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -100,6 +103,20 @@ public class LinkedQueue<E> {
         }
     }
 
+    // Returns a map of the counts the elements in the queue
+    public Map<E, Integer> getCounts() {
+        Map<E, Integer> map = new TreeMap<>();
+        for (int i = 0; i < this.size(); i++) {
+            E data = (E) this.nodeAt(i).data;
+            if (!map.containsKey(data)) {
+                map.put(data, 1);
+            } else {
+                map.put(data, map.get(data) + 1);
+            }
+        }
+        return map;
+    }
+
     // Returns index of first occurence of e.
     // Returns -1 if not found
     public int indexOf(E e) {
@@ -140,6 +157,26 @@ public class LinkedQueue<E> {
                     return false;
                 }
                 current = current.next;
+            }
+            return true;
+        }
+    }
+
+    // Returns true if the queue's elements are unique (no duplicates)
+    // and false otherwise
+    public boolean isUnique() {
+        if (this.isEmpty() || this.size() == 1) {
+            return true;
+        } else {
+            Set uniques = new HashSet();
+            int size = this.size();
+            for (int i = 0; i < size; i++) {
+                E data = (E) this.nodeAt(i).data;
+                if (uniques.contains(data)) {
+                    return false;
+                } else {
+                    uniques.add(data);
+                }
             }
             return true;
         }
