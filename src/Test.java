@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -77,6 +78,10 @@ public class Test {
 
         System.out.println("q = pal: " + q.equals(pal)); // false
         System.out.println("q = q: " + q.equals(q)); // true
+
+        Set dupes = pal.removeDuplicates();
+        System.out.println("Removed dupes: " + pal.toString());
+        System.out.println("Dupes: " + dupes.toString());
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
