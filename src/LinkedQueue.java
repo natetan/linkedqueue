@@ -1,4 +1,10 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Random;
+import java.util.Set;
+import java.util.Stack;
+import java.util.TreeSet;
 
 /**
  *  Yulong Tan
@@ -143,7 +149,7 @@ public class LinkedQueue<E> {
     // it throws an IndexOutOfBoundsException
     public QueueNode nodeAt(int index) {
         if (index >= this.size) {
-            throw new IndexOutOfBoundsException();
+            throw new IndexOutOfBoundsException("Index: " + index);
         }
         if (index == 0) {
             return this.front;
@@ -224,6 +230,23 @@ public class LinkedQueue<E> {
                 this.size--;
             }
         }
+    }
+
+    // Removes duplicates from the queue and returns them as a set
+    // Order is not preserved
+    public Set removeDuplicates() {
+        Set duplicates = new TreeSet();
+        if (this.size() > 1) {
+            this.sort();
+            int size = this.size();
+            for (int i = 0; i < this.size(); i++) {
+                if (this.nodeAt(i).data.equals(this.nodeAt(i + 1).data)) {
+                    duplicates.add(this.remove(i));
+                }
+            }
+        }
+        return duplicates;
+
     }
 
     // Reverses the queue
