@@ -270,15 +270,18 @@ public class LinkedQueue<E> {
     }
 
     // Removes duplicates from the queue and returns them as a set
-    // Order is not preserved
+    // Order is preserved
     public Set removeDuplicates() {
         Set duplicates = new TreeSet();
         if (this.size() > 1) {
-            this.sort();
             int size = this.size();
             for (int i = 0; i < this.size(); i++) {
-                if (this.nodeAt(i).data.equals(this.nodeAt(i + 1).data)) {
-                    duplicates.add(this.remove(i));
+                E data = (E) this.nodeAt(i).data;
+                if (duplicates.contains(data)) {
+                    this.remove(i);
+                    i--;
+                } else {
+                    duplicates.add(data);
                 }
             }
         }
