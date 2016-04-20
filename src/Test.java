@@ -77,6 +77,7 @@ public class Test {
         System.out.println("q = q: " + q.equals(q)); // true
 
         // Testing for uniqueness and removing duplicates
+        System.out.println(pal.toString());
         System.out.println("Is it unique?: " + pal.isUnique());
         Set dupes = pal.removeDuplicates();
         System.out.println("Removed dupes: " + pal.toString());
@@ -87,6 +88,10 @@ public class Test {
         q.add("Spider-Man");
         Map map = q.getCounts();
         System.out.println("Counts: " + map.toString());
+
+        System.out.println("Before rotate: " + q.toString());
+        q.rotate(5);
+        System.out.println("After rotating 5 times: " + q.toString());
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
