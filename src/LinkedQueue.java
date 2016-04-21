@@ -117,6 +117,23 @@ public class LinkedQueue<E> {
         return map;
     }
 
+	// Returns a set containing the most frequently occuring item(s) in the queue
+	public Set getMaxOccurrences() {
+		Set set = new TreeSet();
+		Map<E, Integer> map = this.getCounts();
+		int max = 0;
+		for (E data : map.keySet()) {
+			max = Math.max(max, map.get(data));
+		}
+		for (E data : map.keySet()) {
+			if (map.get(data) == max) {
+				set.add(data);
+			}
+		}
+		return set;
+	}
+
+
     // Returns index of first occurence of e.
     // Returns -1 if not found
     public int indexOf(E e) {
