@@ -92,6 +92,9 @@ public class Test {
         System.out.println("Before rotate: " + q.toString());
         q.rotate(5);
         System.out.println("After rotating 5 times: " + q.toString());
+
+        Set occurences = q.getMaxOccurrences();
+        System.out.println("Most frequent: " + occurences.toString());
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
