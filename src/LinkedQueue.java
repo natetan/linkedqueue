@@ -308,12 +308,10 @@ public class LinkedQueue<E> {
 
     // Reverses the queue
     public void reverse() {
-        Stack s = new Stack();
-        while (!this.isEmpty()) {
-            s.push(this.remove());
-        }
-        while (!s.isEmpty()) {
-            this.add((E) s.pop());
+        if (this.size() > 1) {
+            E data = this.remove();
+            this.reverse();
+            this.add(data);
         }
     }
 
