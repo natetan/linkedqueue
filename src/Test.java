@@ -95,6 +95,22 @@ public class Test {
 
         Set occurences = q.getMaxOccurrences();
         System.out.println("Most frequent: " + occurences.toString());
+
+        // Retain all
+        LinkedQueue items = new LinkedQueue();
+        for (int i = 0; i < 5; i++) {
+            items.add(i);
+        }
+        LinkedQueue oldItems = new LinkedQueue();
+        for (int i = 0; i < 5; i++) {
+            oldItems.add(i + 1);
+        }
+        oldItems.add(1);
+        oldItems.add(2);
+        System.out.println("Items: " + items.toString());
+        System.out.println("oldItems: " + oldItems.toString());
+        oldItems.retainAll(items);
+        System.out.println("old items: " + oldItems.toString());
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
