@@ -131,7 +131,19 @@ public class LinkedQueue<E> {
 		}
 		return set;
 	}
-
+	
+	// Returns the data at the front of the queue
+	public E getFront() {
+		if (!this.isEmpty()) {
+			return this.front.data;
+		}
+	
+	// Returns the data at the back of the queue
+	public E getLast() {
+		if (!this.isempty()) {
+			return this.back.data;
+		}
+	}
 
     // Returns index of first occurence of e.
     // Returns -1 if not found
@@ -311,6 +323,7 @@ public class LinkedQueue<E> {
             for (int i = 0; i < size; i++) {
                 if (!other.contains((E) this.nodeAt(i).data)) {
                     this.remove(i);
+                    i--;
                 }
             }
         }
