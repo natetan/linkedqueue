@@ -317,6 +317,7 @@ public class LinkedQueue<E> {
     }
 
     // Retains all the elements in this queue that are in the other queue as well
+	// NOTE: Seems to have an out of bounds exception. DOES NOT WORK YET
     public void retainAll(LinkedQueue other) {
         if (!this.isEmpty()) {
             int size = this.size();
