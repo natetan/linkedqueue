@@ -9,12 +9,10 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
- *  Yulong Tan
- *  4.8.16
- *
- *  LinkedList implementation of a Queue, with First In, First Out structure.
- *
- *
+ * Yulong Tan
+ * 4.8.16
+ * <p>
+ * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
 public class LinkedQueue<E> {
@@ -116,37 +114,37 @@ public class LinkedQueue<E> {
         return map;
     }
 
-	// Returns a set containing the most frequently occuring item(s) in the queue
-	public Set getMaxOccurrences() {
-		Set set = new TreeSet();
-		Map<E, Integer> map = this.getCounts();
-		int max = 0;
-		for (E data : map.keySet()) {
-			max = Math.max(max, map.get(data));
-		}
-		for (E data : map.keySet()) {
-			if (map.get(data) == max) {
-				set.add(data);
-			}
-		}
-		return set;
-	}
-	
-	// Returns the data at the front of the queue
-	public E getFront() {
+    // Returns a set containing the most frequently occuring item(s) in the queue
+    public Set getMaxOccurrences() {
+        Set set = new TreeSet();
+        Map<E, Integer> map = this.getCounts();
+        int max = 0;
+        for (E data : map.keySet()) {
+            max = Math.max(max, map.get(data));
+        }
+        for (E data : map.keySet()) {
+            if (map.get(data) == max) {
+                set.add(data);
+            }
+        }
+        return set;
+    }
+
+    // Returns the data at the front of the queue
+    public E getFront() {
         if (this.isEmpty()) {
             throw new NoSuchElementException();
         }
-            return (E) this.front.data;
+        return (E) this.front.data;
     }
-	
-	// Returns the data at the back of the queue
-	public E getLast() {
+
+    // Returns the data at the back of the queue
+    public E getLast() {
         if (this.isEmpty()) {
             throw new NoSuchElementException();
         }
         return (E) this.back.data;
-	}
+    }
 
     // Returns index of first occurence of e.
     // Returns -1 if not found
@@ -320,7 +318,7 @@ public class LinkedQueue<E> {
     }
 
     // Retains all the elements in this queue that are in the other queue as well
-	// NOTE: Seems to have an out of bounds exception. DOES NOT WORK YET
+    // NOTE: Seems to have an out of bounds exception. DOES NOT WORK YET
     public void retainAll(LinkedQueue other) {
         if (!this.isEmpty()) {
             int size = this.size();
@@ -379,7 +377,7 @@ public class LinkedQueue<E> {
     private void mergeSort(LinkedQueue result, LinkedQueue half1, LinkedQueue half2) {
         while (!half1.isEmpty() && !half2.isEmpty()) {
             // Casting Object to Comparable fixes the problem
-            if ((((Comparable)half1.peek()).compareTo((half2.peek()))) <= 0) {
+            if ((((Comparable) half1.peek()).compareTo((half2.peek()))) <= 0) {
                 result.add(half1.remove());
             } else {
                 result.add(half2.remove());
