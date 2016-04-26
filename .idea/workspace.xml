@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e21a0c20-bb36-44bb-bce7-d8852d3a5a12" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LinkedQueue/LinkedQueue.class" afterPath="$PROJECT_DIR$/out/production/LinkedQueue/LinkedQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LinkedQueue/Test.class" afterPath="$PROJECT_DIR$/out/production/LinkedQueue/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LinkedQueue.java" afterPath="$PROJECT_DIR$/src/LinkedQueue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test.java" afterPath="$PROJECT_DIR$/src/Test.java" />
     </list>
     <ignored path="LinkedQueue.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LinkedQueue.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LinkedQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="319" column="81" selection-start-line="319" selection-start-column="81" selection-end-line="319" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="399" column="40" selection-start-line="399" selection-start-column="40" selection-end-line="399" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65467626">
-              <caret line="112" column="53" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
+            <state vertical-scroll-proportion="-4.448276">
+              <caret line="107" column="18" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -55,7 +51,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-              <folding />
+              <folding>
+                <element signature="e#389#390#0" expanded="false" />
+                <element signature="e#427#428#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -522,7 +521,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -548,7 +550,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -574,7 +579,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -582,25 +590,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="319" column="81" selection-start-line="319" selection-start-column="81" selection-end-line="319" selection-end-column="81" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#389#390#0" expanded="false" />
+            <element signature="e#427#428#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65467626">
-          <caret line="112" column="53" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
+        <state vertical-scroll-proportion="-4.448276">
+          <caret line="107" column="18" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="18" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="399" column="40" selection-start-line="399" selection-start-column="40" selection-end-line="399" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

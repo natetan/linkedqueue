@@ -44,12 +44,15 @@ public class LinkedQueue<E> {
     }
 
     // Adds all the contents from another LinkedQueue to this one
-    public void addAll(LinkedQueue other) {
+    public void addAll(LinkedQueue other, boolean sorted) {
         int size = other.size();
         for (int i = 0; i < size; i++) {
             E next = (E) other.remove();
             this.add(next);
             other.add(next);
+        }
+        if (sorted) {
+            this.sort();
         }
     }
 
@@ -394,7 +397,7 @@ public class LinkedQueue<E> {
     public void shuffle() {
         if (this.size() > 1) {
             LinkedQueue<E> storage = new LinkedQueue<>();
-            storage.addAll(this);
+            storage.addAll(this, false);
             Random r = new Random();
             this.clear();
             int rand = r.nextInt(storage.size() - 1);
