@@ -321,8 +321,7 @@ public class LinkedQueue<E> {
     // NOTE: Seems to have an out of bounds exception. DOES NOT WORK YET
     public void retainAll(LinkedQueue other) {
         if (!this.isEmpty()) {
-            int size = this.size();
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i < this.size(); i++) {
                 if (!other.contains((E) this.nodeAt(i).data)) {
                     this.remove(i);
                     i--;
