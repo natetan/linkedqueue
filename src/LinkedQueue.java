@@ -134,15 +134,18 @@ public class LinkedQueue<E> {
 	
 	// Returns the data at the front of the queue
 	public E getFront() {
-		if (!this.isEmpty()) {
-			return this.front.data;
-		}
+        if (this.isEmpty()) {
+            throw new NoSuchElementException();
+        }
+            return (E) this.front.data;
+    }
 	
 	// Returns the data at the back of the queue
 	public E getLast() {
-		if (!this.isempty()) {
-			return this.back.data;
-		}
+        if (this.isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return (E) this.back.data;
 	}
 
     // Returns index of first occurence of e.
