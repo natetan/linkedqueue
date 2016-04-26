@@ -139,7 +139,7 @@ public class LinkedQueue<E> {
     }
 
     // Returns the data at the back of the queue
-    public E getLast() {
+    public E getBack() {
         if (this.isEmpty()) {
             throw new NoSuchElementException();
         }
