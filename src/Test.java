@@ -105,12 +105,12 @@ public class Test {
         for (int i = 0; i < 5; i++) {
             oldItems.add(i + 1);
         }
-        oldItems.add(1);
-        oldItems.add(2);
+        oldItems.add(12);
+        oldItems.add(23);
         System.out.println("Items: " + items.toString());
-        System.out.println("oldItems: " + oldItems.toString());
-        oldItems.retainAll(items);
         System.out.println("old items: " + oldItems.toString());
+        oldItems.retainAll(items);
+        System.out.println("Retained items in 'items': " + oldItems.toString());
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
