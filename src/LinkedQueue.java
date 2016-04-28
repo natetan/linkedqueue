@@ -12,6 +12,7 @@ import java.util.TreeSet;
  * Yulong Tan
  * 4.8.16
  * <p>
+ * <p>
  * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
@@ -47,6 +48,7 @@ public class LinkedQueue<E> {
     public void addAll(LinkedQueue other) {
         this.addAll(other, false);
     }
+
     // Adds all the contents from another LinkedQueue to this one.
     // If the boolean value passed in is true, it sorts the queue as well
     public void addAll(LinkedQueue other, boolean sorted) {
