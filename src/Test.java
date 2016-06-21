@@ -111,6 +111,12 @@ public class Test {
         System.out.println("old items: " + oldItems.toString());
         oldItems.retainAll(items);
         System.out.println("Retained items in 'items': " + oldItems.toString());
+
+        // For each loop test
+        System.out.println("Current queue: " + q.toString());
+        for (String s : q) {
+
+        }
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
