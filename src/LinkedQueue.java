@@ -1,12 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import java.util.Random;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * Yulong Tan
@@ -16,7 +8,7 @@ import java.util.TreeSet;
  * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
-public class LinkedQueue<E> {
+public class LinkedQueue<E> implements Iterable<LinkedQueue> {
     private QueueNode front; // reference to the front
     private QueueNode back; // reference to the back
     private int size; // reference to the size of the queue
@@ -26,6 +18,45 @@ public class LinkedQueue<E> {
         this.front = null;
         this.back = this.front;
         this.size = 0;
+    }
+
+    public Iterator iterator() {
+        return new LinkedQueueIterator(this);
+    }
+
+    private class LinkedQueueIterator<E> implements Iterator<E> {
+        private LinkedQueue<E> queue;
+        private int position;
+        private boolean isRemovable;
+
+        public LinkedQueueIterator(LinkedQueue queue) {
+            this.queue = queue;
+            this.position = 0;
+            this.isRemovable = false;
+        }
+
+        public E next() {
+            if (!this.hasNext()) {
+                throw new NoSuchElementException();
+            }
+            E data = (E) LinkedQueue.this.nodeAt(position).data;
+            this.position++;
+            this.isRemovable = true;
+            return data;
+        }
+
+        public boolean hasNext() {
+            return this.position < this.queue.size();
+        }
+
+        public void remove() {
+            if (!this.isRemovable) {
+                throw new IllegalStateException();
+            }
+            queue.remove(this.position - 1);
+            this.position--;
+            this.isRemovable = false;
+        }
     }
 
     // Adds the given data to the queue, increases the size
@@ -123,23 +154,23 @@ public class LinkedQueue<E> {
         }
         return map;
     }
-	
-	// Returns the node with the data passed in. Returns null if the queue is empty or not in the queue
-	public QueueNode get(Object o) {
-		if (this.isEmpty()) {
-			return null;
-		} else {
-			QueueNode current = this.front;
-			while (current != null) {
-				if (current.data.equals(o)) {
-					return current;
-				} else {
-					current = current.next;
-				}
-			}
-			return null;
-		}
-	}
+
+    // Returns the node with the data passed in. Returns null if the queue is empty or not in the queue
+    public QueueNode get(Object o) {
+        if (this.isEmpty()) {
+            return null;
+        } else {
+            QueueNode current = this.front;
+            while (current != null) {
+                if (current.data.equals(o)) {
+                    return current;
+                } else {
+                    current = current.next;
+                }
+            }
+            return null;
+        }
+    }
 
     // Returns a set containing the most frequently occuring item(s) in the queue
     public Set getMaxOccurrences() {
