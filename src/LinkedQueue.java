@@ -8,7 +8,7 @@ import java.util.*;
  * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
-public class LinkedQueue<E> implements Iterable<LinkedQueue<E>> {
+public class LinkedQueue<E> implements Iterable<E> {
     private QueueNode front; // reference to the front
     private QueueNode back; // reference to the back
     private int size; // reference to the size of the queue
@@ -22,8 +22,8 @@ public class LinkedQueue<E> implements Iterable<LinkedQueue<E>> {
 
     // The LinkedQueueIterator class allows the iteration over
     // a LinkedQueue and removal of elements as well
-    private class LinkedQueueIterator<E> implements Iterator<E> {
-        private LinkedQueue<E> queue; // Queue to iterate over
+    private class LinkedQueueIterator implements Iterator<E> {
+        private LinkedQueue queue; // Queue to iterate over
         private int position;         // Current position within the queue
         private boolean isRemovable;  // Whether or not it's okay to remove now
 
