@@ -124,13 +124,13 @@ public class Test {
         System.out.println("Current queue = Iterator queue: " + q.equals(iteratorQ));
         System.out.println("Adding items to new queue from for each loop");
         LinkedQueue<String> forEachQ = new LinkedQueue<>();
-        /*
+        
         for (String s : q) { // Problem here: incompatible types?
             forEachQ.add(s);
         }
         System.out.println("For each queue: " + forEachQ.toString());
         System.out.println("Current queue = for each queue: " + q.equals(forEachQ));
-        */
+
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
