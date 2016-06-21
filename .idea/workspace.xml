@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e21a0c20-bb36-44bb-bce7-d8852d3a5a12" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LinkedQueue/LinkedQueue.class" afterPath="$PROJECT_DIR$/out/production/LinkedQueue/LinkedQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LinkedQueue/Test.class" afterPath="$PROJECT_DIR$/out/production/LinkedQueue/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LinkedQueue.java" afterPath="$PROJECT_DIR$/src/LinkedQueue.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test.java" afterPath="$PROJECT_DIR$/src/Test.java" />
     </list>
     <ignored path="LinkedQueue.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,25 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LinkedQueue.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LinkedQueue.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state vertical-scroll-proportion="1.410072">
+              <caret line="54" column="73" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
               <folding>
-                <element signature="e#566#567#0" expanded="true" />
-                <element signature="e#618#619#0" expanded="true" />
-                <element signature="e#1288#1289#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
+                <element signature="e#1681#1682#0" expanded="true" />
+                <element signature="e#1745#1746#0" expanded="true" />
+                <element signature="e#8479#8480#0" expanded="true" />
+                <element signature="e#8531#8532#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60431653">
+            <state vertical-scroll-proportion="0.0">
               <caret line="117" column="75" selection-start-line="117" selection-start-column="75" selection-end-line="117" selection-end-column="75" />
               <folding />
             </state>
@@ -84,8 +80,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/QueueNode.java" />
-        <option value="$PROJECT_DIR$/src/LinkedQueue.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/LinkedQueue.java" />
       </list>
     </option>
   </component>
@@ -500,10 +496,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#8479#8480#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -529,10 +525,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#8479#8480#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -558,10 +554,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#8479#8480#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,10 +583,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#8479#8480#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,24 +615,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#618#619#0" expanded="true" />
-            <element signature="e#1288#1289#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-          </folding>
+          <caret line="117" column="75" selection-start-line="117" selection-start-column="75" selection-end-line="117" selection-end-column="75" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60431653">
-          <caret line="117" column="75" selection-start-line="117" selection-start-column="75" selection-end-line="117" selection-end-column="75" />
-          <folding />
+        <state vertical-scroll-proportion="1.410072">
+          <caret line="54" column="73" selection-start-line="54" selection-start-column="73" selection-end-line="54" selection-end-column="73" />
+          <folding>
+            <element signature="e#1681#1682#0" expanded="true" />
+            <element signature="e#1745#1746#0" expanded="true" />
+            <element signature="e#8479#8480#0" expanded="true" />
+            <element signature="e#8531#8532#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

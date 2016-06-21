@@ -115,10 +115,22 @@ public class Test {
         // Iterator and for each loop test
         System.out.println("Current queue: " + q.toString());
         Iterator<String> i = q.iterator();
-        System.out.println("Printing items in current queue via iterator");
+        System.out.println("Adding items to new queue from iterator");
+        LinkedQueue<String> iteratorQ = new LinkedQueue<>();
         while (i.hasNext()) {
-            System.out.println(i.next());
+            iteratorQ.add(i.next());
         }
+        System.out.println("Iterator queue: " + iteratorQ.toString());
+        System.out.println("Current queue = Iterator queue: " + q.equals(iteratorQ));
+        System.out.println("Adding items to new queue from for each loop");
+        LinkedQueue<String> forEachQ = new LinkedQueue<>();
+        /*
+        for (String s : q) { // Problem here: incompatible types?
+            forEachQ.add(s);
+        }
+        System.out.println("For each queue: " + forEachQ.toString());
+        System.out.println("Current queue = for each queue: " + q.equals(forEachQ));
+        */
     }
 
     public static boolean isPalindrome(LinkedQueue q) {

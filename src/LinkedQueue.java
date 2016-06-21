@@ -20,21 +20,22 @@ public class LinkedQueue<E> implements Iterable<LinkedQueue<E>> {
         this.size = 0;
     }
 
-    public Iterator iterator() {
-        return new LinkedQueueIterator(this);
-    }
-
+    // The LinkedQueueIterator class allows the iteration over
+    // a LinkedQueue and removal of elements as well
     private class LinkedQueueIterator<E> implements Iterator<E> {
-        private LinkedQueue<E> queue;
-        private int position;
-        private boolean isRemovable;
+        private LinkedQueue<E> queue; // Queue to iterate over
+        private int position;         // Current position within the queue
+        private boolean isRemovable;  // Whether or not it's okay to remove now
 
+        // Contructs an iterator over the given list
         public LinkedQueueIterator(LinkedQueue queue) {
             this.queue = queue;
             this.position = 0;
             this.isRemovable = false;
         }
 
+        // Returns the next element in the iteration. Throws a
+        // NoSuchElementException when there is no next.
         public E next() {
             if (!this.hasNext()) {
                 throw new NoSuchElementException();
@@ -45,10 +46,13 @@ public class LinkedQueue<E> implements Iterable<LinkedQueue<E>> {
             return data;
         }
 
+        // Returns true if there are more elements left and false otherwise.
         public boolean hasNext() {
             return this.position < this.queue.size();
         }
 
+        // Removes the last element returned by the iterator.
+        // Throws an IllegalStateException if next() has not been called.
         public void remove() {
             if (!this.isRemovable) {
                 throw new IllegalStateException();
@@ -267,6 +271,11 @@ public class LinkedQueue<E> implements Iterable<LinkedQueue<E>> {
             }
             return true;
         }
+    }
+
+    // Returns an iterator over the queue
+    public Iterator iterator() {
+        return new LinkedQueueIterator(this);
     }
 
     // Returns the node at the given index. If the index is >= than the size,
