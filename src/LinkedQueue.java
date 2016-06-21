@@ -8,7 +8,7 @@ import java.util.*;
  * LinkedList implementation of a Queue, with First In, First Out structure.
  */
 
-public class LinkedQueue<E> implements Iterable<LinkedQueue> {
+public class LinkedQueue<E> implements Iterable<LinkedQueue<E>> {
     private QueueNode front; // reference to the front
     private QueueNode back; // reference to the back
     private int size; // reference to the size of the queue

@@ -112,10 +112,12 @@ public class Test {
         oldItems.retainAll(items);
         System.out.println("Retained items in 'items': " + oldItems.toString());
 
-        // For each loop test
+        // Iterator and for each loop test
         System.out.println("Current queue: " + q.toString());
-        for (String s : q) {
-
+        Iterator<String> i = q.iterator();
+        System.out.println("Printing items in current queue via iterator");
+        while (i.hasNext()) {
+            System.out.println(i.next());
         }
     }
 
