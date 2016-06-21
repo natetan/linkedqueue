@@ -123,6 +123,23 @@ public class LinkedQueue<E> {
         }
         return map;
     }
+	
+	// Returns the node with the data passed in. Returns null if the queue is empty or not in the queue
+	public QueueNode get(Object o) {
+		if (this.isEmpty()) {
+			return null;
+		} else {
+			QueueNode current = this.front;
+			while (current != null) {
+				if (current.data.equals(o)) {
+					return current;
+				} else {
+					current = current.next;
+				}
+			}
+			return null;
+		}
+	}
 
     // Returns a set containing the most frequently occuring item(s) in the queue
     public Set getMaxOccurrences() {
