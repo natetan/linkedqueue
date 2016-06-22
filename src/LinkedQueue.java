@@ -27,7 +27,7 @@ public class LinkedQueue<E> implements Iterable<E> {
         private int position;         // Current position within the queue
         private boolean isRemovable;  // Whether or not it's okay to remove now
 
-        // Contructs an iterator over the given list
+        // Constructs an iterator over the given list
         public LinkedQueueIterator(LinkedQueue queue) {
             this.queue = queue;
             this.position = 0;
