@@ -129,8 +129,6 @@ public class LinkedQueue<E> implements Iterable<E> {
     public boolean equals(LinkedQueue other) {
         if (this.size() != other.size()) {
             return false;
-        } else if (this.isEmpty() && other.isEmpty()) {
-            return true;
         } else {
             QueueNode current1 = this.front;
             QueueNode current2 = other.front;
