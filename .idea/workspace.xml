@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e21a0c20-bb36-44bb-bce7-d8852d3a5a12" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LinkedQueue.java" afterPath="$PROJECT_DIR$/src/LinkedQueue.java" />
-    </list>
+    <list default="true" id="e21a0c20-bb36-44bb-bce7-d8852d3a5a12" name="Default" comment="" />
     <ignored path="LinkedQueue.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.50359714">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+              <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
               <folding>
                 <element signature="e#1663#1664#0" expanded="true" />
                 <element signature="e#1727#1728#0" expanded="true" />
@@ -626,7 +624,7 @@
     <entry file="file://$PROJECT_DIR$/src/LinkedQueue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50359714">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <caret line="55" column="30" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
           <folding>
             <element signature="e#1663#1664#0" expanded="true" />
             <element signature="e#1727#1728#0" expanded="true" />
