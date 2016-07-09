@@ -6,6 +6,7 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] stuff) {
+        System.out.println("General test");
         LinkedQueue<String> q = new LinkedQueue();
         q.add("Apples");
         q.add("Bananas");
@@ -46,19 +47,28 @@ public class Test {
         q.add("Spider-Man");
         System.out.println("Added stuff: " + q.toString());
         System.out.println("Size: " + q.size());
+        System.out.println();
 
         // shuffle
+        System.out.println("Testing shuffle");
+        System.out.println("Queue: " + q.toString());
         q.shuffle();
         System.out.println("Shuffled queue: " + q.toString());
         System.out.println("Sorted: " + q.isSorted());
+        System.out.println();
 
         // sort
+        System.out.println("Testing sort");
+        System.out.println("Queue: " + q.toString());
+        System.out.println("Sorted: " + q.isSorted());
         q.sort();
-        System.out.println("Merge Sort: " + q.toString());
+        System.out.println("Sorted Queue: " + q.toString());
         System.out.println("Sorted: " + q.isSorted());
         System.out.println("Size: " + q.size());
+        System.out.println();
 
         // Palindrome
+        System.out.println("Testing Palindrome");
         LinkedQueue<String> pal = new LinkedQueue<>();
         pal.add("hello");
         pal.add("this");
@@ -68,23 +78,28 @@ public class Test {
         pal.add("hello");
         System.out.println("Pal queue: " + pal.toString());
         System.out.println("isPalindrome: " + isPalindrome(pal));
+        System.out.println();
 
         // Reverse
+        System.out.println("Testing reverse");
         q.reverse();
         System.out.println("Reversed queue: " + q.toString());
-
         System.out.println("q = pal: " + q.equals(pal)); // false
         System.out.println("q = q: " + q.equals(q)); // true
+        System.out.println();
 
         // Testing for uniqueness and removing duplicates
+        System.out.println("Testing Unique and removeDupes");
         System.out.println(pal.toString());
         System.out.println("Is it unique?: " + pal.isUnique());
         Set dupes = pal.removeDuplicates();
         System.out.println("Removed dupes: " + pal.toString());
         System.out.println("Is it unique?: " + pal.isUnique());
         System.out.println("Dupes: " + dupes.toString());
+        System.out.println();
 
         // Get counts
+        System.out.println("Testing getCounts");
         q.add("Spider-Man");
         Map map = q.getCounts();
         System.out.println("Counts: " + map.toString());
@@ -95,8 +110,10 @@ public class Test {
 
         Set occurences = q.getMaxOccurrences();
         System.out.println("Most frequent: " + occurences.toString());
+        System.out.println();
 
         // Retain all
+        System.out.println("Testing retainAll");
         LinkedQueue items = new LinkedQueue();
         for (int i = 0; i < 5; i++) {
             items.add(i);
@@ -111,11 +128,13 @@ public class Test {
         System.out.println("old items: " + oldItems.toString());
         oldItems.retainAll(items);
         System.out.println("Retained items in 'items': " + oldItems.toString());
+        System.out.println();
 
         // Iterator and for each loop test
         System.out.println("Current queue: " + q.toString());
 
         /* Iterator */
+        System.out.println("Testing Iterator");
         Iterator<String> i = q.iterator();
         System.out.println("Adding items to new queue from iterator");
         LinkedQueue<String> iteratorQ = new LinkedQueue<>();
@@ -124,8 +143,10 @@ public class Test {
         }
         System.out.println("Iterator queue: " + iteratorQ.toString());
         System.out.println("Current queue = Iterator queue: " + q.equals(iteratorQ));
+        System.out.println();
 
         /* For each loop */
+        System.out.println("Testing for each loop");
         System.out.println("Adding items to new queue from for each loop");
         LinkedQueue<String> forEachQ = new LinkedQueue<>();
         for (String s : q) {
@@ -133,7 +154,7 @@ public class Test {
         }
         System.out.println("For each queue: " + forEachQ.toString());
         System.out.println("Current queue = for each queue: " + q.equals(forEachQ));
-
+        System.out.println();
     }
 
     public static boolean isPalindrome(LinkedQueue q) {
