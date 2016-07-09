@@ -462,12 +462,12 @@ public class LinkedQueue<E> implements Iterable<E> {
             storage.addAll(this);
             Random r = new Random();
             this.clear();
-            int rand = r.nextInt(storage.size() - 1);
+            int rand = r.nextInt(storage.size());
             this.add((E) storage.nodeAt(rand).data);
             storage.remove(rand);
             // Going until the size is 1 fixes the issue of r.nextInt(0)
             while (storage.size() > 1) {
-                int random = r.nextInt(storage.size() - 1);
+                int random = r.nextInt(storage.size());
                 this.add((E) storage.nodeAt(random).data);
                 storage.remove(random);
             }
