@@ -396,10 +396,17 @@ public class LinkedQueue<E> implements Iterable<E> {
 
     // Reverses the queue
     public void reverse() {
-        if (this.size() > 1) {
-            E data = this.remove();
-            this.reverse();
-            this.add(data);
+        if (this.front != null && this.front.next != null) {
+            QueueNode current = this.front;
+            QueueNode next = null;
+            QueueNode prev = null;
+            while (current != null) {
+                next = current.next;
+                current.next = prev;
+                prev = current;
+                current = next;
+            }
+            this.front = prev;
         }
     }
 
