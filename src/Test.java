@@ -82,8 +82,13 @@ public class Test {
 
         // Reverse
         System.out.println("Testing reverse");
+        System.out.println("Queue: " + q.toString());
+        System.out.println("Front: " + q.getFront());
+        System.out.println("Back: " + q.getBack());
         q.reverse();
         System.out.println("Reversed queue: " + q.toString());
+        System.out.println("Front: " + q.getFront());
+        System.out.println("Back: " + q.getBack());
         System.out.println("q = pal: " + q.equals(pal)); // false
         System.out.println("q = q: " + q.equals(q)); // true
         System.out.println();
